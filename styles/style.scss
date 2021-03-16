@@ -1,0 +1,1429 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&family=Shadows+Into+Light&display=swap');
+
+$font-bebas: 'Bebas Neue', cursive;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-shadows: 'Shadows Into Light', cursive;
+$color-white: #F0F4EF;
+$color-black: #373F47;
+$color-dark-red: #C92B14;
+$color-dark-yellow: #FCB00A;
+$color-light-blue: #0CB6E3;
+$box-dark-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.4);
+$basic-transition: all 0.5s ease-in;
+
+/*Mixins*/
+@mixin for-phones {
+  @media (max-width: 599px) { @content };
+}
+@mixin for-tablets {
+  @media (min-width: 600px) and (max-width: 900px) { @content };
+}
+@mixin for-desktops {
+  @media (min-width: 901px) {@content};
+}
+@mixin displayFlex($direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+@mixin bgBasics {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin otherLinksHoverAfter {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120%;
+  height: 1px;
+  background: $color-white;
+  transition: $basic-transition;
+  opacity: 0;
+}
+@mixin linksDiv {
+  width: auto;
+  height: 10vh;
+  position: relative;
+}
+
+@mixin animationLinkIcons($content) {
+  content: "#{$content}";
+  margin-right: 10px;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: $basic-transition;
+}
+
+@mixin base-activities-carousel {
+  height: 100%;
+  width: 36.1vw;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  transition: all 0.6s linear;
+  box-shadow: 0px 0px 5px 20px rgba(255, 255, 255, 0.15), 0px 0px 5px 10px rgba(255, 255, 255, 0.35), 0px 0px 5px 15px rgba(255, 255, 255, 0.2), 0px 0px 5px 5px rgba(255, 252, 252, 0.5);
+  @include for-phones {
+    width: 50vw;
+  }
+  img {
+    height: 100%;
+    width: 36.1vw;
+    @include for-phones {
+      width: 50vw;
+    }
+  } 
+  h3 {
+    color: $color-dark-red;
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    @include for-tablets {
+      font-size: 1.2rem;
+    }
+    @include for-phones {
+      font-size: 0.9rem;
+    }
+  }
+  p {
+    width: 50%;
+    position: absolute;
+    font-size: 0.875rem;
+    padding: 0.2rem 0.5rem;
+    bottom: 2rem;
+    left: 2rem;
+    @include for-tablets {
+      font-size: 0.7rem;
+      bottom: 4rem;
+    }
+    @include for-phones {
+      font-size: 0.9rem;
+      bottom: 4rem;
+      width: 80%;
+    }
+  }
+  button {
+    border: none;
+    background: $color-dark-red;
+    color: $color-white;
+    position: absolute;
+    padding: 0.2rem 0.7rem;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    bottom: 3.5rem;
+    right: 1rem;
+    outline: none;
+    transition: all 0.5s ease-in;
+    @include for-tablets {
+      font-size: 1rem;
+      bottom: 3rem;
+      left: 3rem;
+    }
+    @include for-phones {
+      font-size: 0.9rem;
+      bottom: 3rem;
+      left: 3rem;
+    }
+  }
+  button:hover {
+    background: $color-dark-yellow;
+  }
+  .spans {
+    @include displayFlex(row);
+    justify-content: space-between;
+    color: $color-dark-yellow;
+    width: 70%;
+    position: absolute;
+    bottom: 0.8rem;
+    left: 2rem;
+    @include for-tablets {
+      font-size: 0.7rem;
+      bottom: 0.4rem;
+      left: 1.8rem;
+    }
+    @include for-phones {
+      font-size: 0.7rem;
+      bottom: 0.3rem;
+      left: 1.6rem;
+    }
+  }
+}
+
+
+
+/*General*/
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $font-montserrat;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: $color-white;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: $color-white;
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-bebas;
+  letter-spacing: 0.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  @include for-phones {
+    font-size: 2.5rem;
+  }
+  @include for-tablets {
+    font-size: 3rem;
+  }
+  @include for-desktops {
+    font-size: 4rem;
+  }
+}
+h2 {
+  color: $color-dark-yellow;
+  @include for-phones {
+    font-size: 1.5rem;
+  }
+  @include for-tablets {
+    font-size: 2rem;
+  }
+  @include for-desktops {
+    font-size: 2.5rem;
+  }
+}
+h3 {
+  @include for-phones {
+    font-size: 0.9rem;
+  }
+  @include for-tablets {
+    font-size: 1.25rem;
+  }
+  @include for-desktops {
+    font-size: 1.75rem;
+  }
+}
+h4 {
+  @include for-phones {
+    font-size: 0.7rem;
+  }
+  @include for-tablets {
+    font-size: 0.875rem;
+  }
+  @include for-desktops {
+    font-size: 1rem;
+  }
+}
+p {
+  @include for-phones {
+    font-size: 0.75rem;
+  }
+  @include for-tablets {
+    font-size: 0.95rem;
+  }
+  @include for-desktops {
+    font-size: 1.2rem;
+  }
+  margin-bottom: 1.25rem;
+}
+img {
+  display: block;
+}
+li {
+  list-style: none;}
+/*Wrapper*/
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(260.55deg, #04060C -3.16%, #0C2243 -0.73%, #164A91 35.22%, #000000 55.06%);
+  overflow-x: hidden;
+}
+/*------------Hero---------------*/
+/*Header*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  @include displayFlex(row);
+  width: 100%;
+  height: 20vh;
+  background: transparent;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  overflow: visible;
+  .icon-text {
+    margin-left: 3rem;
+    margin-top: 1rem;
+    @include for-tablets {
+      font-size: 3rem;
+    }
+    @include for-phones() {
+      font-size: 2rem;
+    }
+  }
+  .icon {
+    height: 8rem;
+    width: auto;
+    border-radius: 50%;
+    margin-top: 5rem;
+    margin-left: 3rem;
+    @include for-tablets {
+      margin-top: 3rem;
+      margin-left: 1.5rem;
+    }
+    @include for-phones {
+      margin-top: 1rem;
+      margin-left: 1.2rem;
+    }
+  }
+  .links-header {
+    @include displayFlex(row);
+    margin-right: 5rem;
+    font-size: 1.5rem;
+    @include for-tablets {
+      display: none;
+    }
+    @include for-phones {
+      display: none;
+    }
+    a {
+      padding: 0 1.5rem;
+      cursor: pointer;
+      color: $color-white
+    }
+    div {
+      @include linksDiv;
+      height: 7vh;
+      &::after {
+        @include otherLinksHoverAfter;
+        left: 50%;
+        width: 50%;
+        transform: translateX(-50%);
+      }
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+    }
+    
+    }
+  } 
+  
+}
+.sticky {
+  background-color: $color-black;
+  opacity: 0.85;
+  height: 10vh;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  div {
+    @include displayFlex(row)
+  }
+  .icon-wrapper {
+    color: $color-light-blue;
+    .icon {
+      display: none;
+    }
+  }
+  @include for-tablets {
+    overflow: visible;
+  }
+  @include for-phones {
+    overflow: visible;
+  }
+  
+}
+.sticky .menu-bar, .header .menu-bar {
+  font-size: 3rem;
+  color: $color-white;
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  @include for-phones {
+    font-size: 2.5rem;
+    top: 2rem;
+  }
+  @include for-desktops {
+    display: none;
+  }
+}
+.sticky .show-menu, .header .show-menu {
+  @include for-tablets {
+    height: 0;
+    opacity: 0;
+    display: block;
+    @include displayFlex(column);
+    position: absolute;
+    width: 50%;
+    background: $color-black;
+    margin: 0;
+    border-bottom-left-radius: 2rem;
+    font-size: 2rem;
+    transition: $basic-transition;
+    overflow: hidden;
+    }
+  @include for-phones {
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    display: block;
+    @include displayFlex(column);
+    position: absolute;
+    background: $color-black;
+    margin: 0;
+    border-bottom-left-radius: 2rem;
+    font-size: 2rem;
+    transition: $basic-transition;
+    }
+    div {
+      height: 6vh;
+    }
+}
+@include for-tablets {
+  .header .show-menu {
+    right: 0;
+    top: 0;
+    opacity: 0.8;
+  }
+  .sticky .show-menu {
+    right: 0;
+    top: 10vh;
+    opacity: 1;
+  }
+}
+@include for-phones {
+  .header .show-menu {
+    right: 0;
+    top: 0;
+    opacity: 0.8;
+  }
+  .sticky .show-menu {
+    right: 0;
+    top: 10vh;
+    opacity: 1;
+  }
+}
+
+/*---General for sections*/
+section {
+  @include displayFlex(column);
+  justify-content: flex-start;
+}
+  /*-----Hero-------*/
+.hero {
+  height: 100vh;
+  background: url('../images/hero-bg.png'), rgba(0, 0, 0, 0.2);
+  @include bgBasics;
+  i {
+    font-size: 2rem;
+    width: auto;
+    color: $color-white;
+    opacity: 0.7;
+  }
+  .hero-content {
+    width: 60%;
+    margin-top: 8rem;
+    min-height: 70%;
+    @include for-tablets {
+      margin-top: 12rem;
+      min-height: 65%;
+    }
+    @include for-phones {
+      margin-top: 18rem;
+      min-height: 60%;
+    }
+    h1 {
+      color: $color-light-blue;
+    }
+    h2 {
+      font-family: $font-shadows;
+    }
+    p {
+      width: 50%;
+      @include for-phones {
+        font-size: 0.9rem;
+      }
+    }
+    a {
+      margin-left: 36%;
+      margin-top: 5rem;
+      font-size: 2.5rem;
+      @include for-tablets {
+        font-size: 2.2rem;
+      }
+      @include for-phones {
+        font-size: 1.8rem;
+      }
+      display: inline;
+      transition: $basic-transition;
+      &:hover {
+        color: $color-dark-yellow;
+      }
+    }
+  }
+  
+  .social-icons, .other-links {
+    @include displayFlex(column);
+  }
+  .social-icons i, .other-links i {
+    padding: 20px 0;
+  }
+  .social-icons {
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+  }
+  .social-icons i {
+    color: $color-dark-red;
+    transition: $basic-transition;
+  }
+  .social-icons i:hover {
+    color: $color-dark-yellow;
+  }
+  .other-links {
+    align-items: flex-end;
+    position: absolute;
+    right: 50px;
+    bottom: 300px;
+    .gallery-icon, .testimonials-icon, .faq-icon {
+      @include linksDiv;
+      &::after {
+        @include otherLinksHoverAfter;
+      }
+      i {
+        transition: $basic-transition;
+      }
+      &:hover {
+        i {
+          color: transparent;
+        }
+        &::before {
+          opacity: 1;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    .gallery-icon {
+      &::before {
+        @include animationLinkIcons(Gallery);
+      }
+    }
+    .testimonials-icon {
+      &::before {
+        @include animationLinkIcons(Testimonials);
+      }
+    }
+    .faq-icon {
+      &::before {
+        @include animationLinkIcons(FAQ);
+      }
+    }
+  }
+  .scroll-down {
+    padding-top: 2rem;
+    animation: fade 1s infinite alternate;
+    @keyframes fade {
+      100% {opacity: 0;}
+    }
+  }
+}
+
+  /*-----What we do-------*/
+  .what-we-do {
+    min-height: 50vh;
+    padding-top: 10vh;
+    box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
+    p {
+      width: 40%;
+      text-align: justify;
+      @include for-phones {
+        width: 70%;
+        margin-bottom: 2rem;
+      }
+    }
+    @include for-tablets {
+      min-height: 40vh;
+    }
+    @include for-phones {
+      min-height: auto;
+    }
+  }
+
+  /*-----Activities-------*/
+.adventures {
+  min-height: 70vh;
+  padding-top: 5vh;
+  box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
+  @include for-tablets {
+  min-height: 40vh;
+  }
+  @include for-phones {
+    min-height: 40vh;
+  }
+  .activities {
+    @include displayFlex(row);
+    width: 90%;
+    min-height: 45vh;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    overflow: visible;
+    @include for-tablets {
+      min-height: 25vh;
+      perspective: 150px;
+    }
+    @include for-phones {
+      min-height: 25vh;
+      perspective: 140px;
+    }
+    .arrow-left, .arrow-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 5rem;
+      opacity: 0.8;
+      transition: $basic-transition;
+    }
+    .arrow-left {
+      left: 1rem;
+    }
+    .arrow-right {
+      right: 1rem;
+    }
+    .arrow-left:hover, .arrow-right:hover {
+      font-size: 6rem;
+      color: $color-dark-yellow;
+    }
+    #activity1 {
+      transform: translateX(-50%);
+      opacity: 1;
+      @include base-activities-carousel;  
+    }
+    #activity2 {
+      transform: translate3d(0, 0, -2.5rem);
+      opacity: 0.8;
+      @include base-activities-carousel;
+    }
+    #activity3 {
+      transform: translate3d(40%, 0, -4rem);
+      opacity: 0.6;
+      @include base-activities-carousel;
+    }
+    #activity4 {
+      transform: translate3d(-140%, 0, -4rem);
+      opacity: 0.6;
+      @include base-activities-carousel;
+    }
+    #activity5 {
+      transform: translate3d(-100%, 0, -2.5rem);
+      opacity: 0.8;
+      @include base-activities-carousel;
+    }
+  }
+
+}
+
+/*-----How it works-------*/
+
+.how-it-works {
+  height: 100vh;
+  position: relative;
+  box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
+  padding-top: 10vh;
+  overflow-x: hidden;
+  @include for-tablets {
+    height: 80vh;
+  }
+  @include for-phones {
+    height: auto;
+  }
+  .how-wrapper {
+    width: 70%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 5rem;
+    @include for-tablets {
+      width: 80%;
+      column-gap: 4rem;
+    }
+    @include for-phones {
+      width: 90%;
+      column-gap: 2rem;
+    }
+    img, div {
+      margin: 1rem 0;
+      align-self: center;
+    }
+    .text1, .text2, .text3 {
+      position: relative;
+    }
+    .text1::before, .text3::before {
+      content: '';
+      width: 50%;
+      height: 1px;
+      background: $color-white;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .text2::before {
+      content: '';
+      width: 50%;
+      height: 1px;
+      background: $color-white;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    img {
+      position: relative;
+    }
+    .image1 {
+      width: auto;
+      height: 10rem;
+      transition: $basic-transition;
+      @include for-phones {
+        height: 15rem;
+      }
+    }
+    .image2 {
+      justify-self: end;
+    }
+    .image2, .image3{
+      width: 13rem;
+      height: auto;
+    }
+    h3 {
+      font-family: $font-shadows;
+      @include for-phones {
+        font-size: 1.2rem;
+      }
+    }
+    p {
+      width: 100%;
+      font-size: 0.8rem;
+      @include for-tablets {
+        font-size: 0.7rem;
+      }
+      @include for-phones {
+        font-size: 0.9rem;
+      }
+    }
+    .text1, .text3 {
+      text-align: right;
+    }
+  }
+  span {
+    font-family: $font-bebas;
+    font-size: 6rem;
+    color: $color-dark-red;
+    opacity: 0.2;
+    @include for-tablets {
+      font-size: 4rem;
+    }
+    @include for-phones {
+      font-size: 3rem;
+    }
+  }
+  .span1 {
+    position: absolute;
+    left: 44%;
+    top: 16%;
+  }
+  .span2 {
+    position: absolute;
+    left: 50%;
+    top: 36%;
+  }
+  .span3 {
+    position: absolute;
+    left: 44%;
+    top: 56%;
+  }
+  @include for-tablets {
+    .span1 {
+      top: 19%;
+    }
+    .span2 {
+      top: 38%;
+    }
+    .span3 {
+      top: 57%;
+    }
+  }
+  @include for-phones {
+    .span1 {
+      top: 18%;
+    }
+    .span2 {
+      top: 43%;
+    }
+    .span3 {
+      top: 70%;
+    }
+  }
+}
+
+/*-----Gallery--------*/
+.gallery {
+  height: 100vh;
+  background-image: url('../images/maplePNGBW.jpg'), linear-gradient(258.94deg, rgba(4, 6, 12, 0.7) -22.75%, rgba(12, 34, 67, 0.7) -21.42%, rgba(22, 74, 145, 0.7) 7.92%, rgba(0, 0, 0, 0.7) 32.58%);
+  background-size: cover;
+  padding-top: 10vh;
+  @include for-tablets {
+    height: 70vh;
+  }
+  @include for-phones {
+    height: 70vh;
+  }
+  .gallery-wrapper {
+    height: 70%;
+    overflow: visible;
+    @include for-tablets {
+      width: 60%;
+    }
+    @include for-phones {
+      width: 85%;
+    }
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'gallery1 gallery1 gallery2 gallery2 gallery2 gallery3 gallery3 gallery3'
+                         'gallery1 gallery1 gallery2 gallery2 gallery2 gallery3 gallery3 gallery3'
+                         'gallery1 gallery1  blank1 gallery5 gallery5 gallery5 gallery6 gallery6'
+                         'gallery4 gallery4  gallery4 gallery5 gallery5 gallery5 gallery6 gallery6'
+                         'gallery4 gallery4  gallery4 gallery8 gallery8 blank2 gallery6 gallery6'
+                         'gallery7 gallery7  gallery7 gallery8 gallery8 gallery9 gallery9 gallery9'
+                         'gallery7 gallery7  gallery7 gallery8 gallery8 gallery9 gallery9 gallery9';
+    column-gap: 0.3rem;
+    row-gap: 0.3rem;
+    transform-style: preserve-3d;
+    perspective: 80vh;
+    position: relative;
+    perspective: 500px;
+    transform-style: preserve-3d;
+    img {
+      object-fit: fill;
+      width: 100%;
+      max-height: 100%;
+    }
+    div {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      box-shadow: 0px 0px 6px 6px rgba(12, 182, 227, 0.5);
+      transition: $basic-transition;
+      
+      }
+    .gallery1{
+      grid-area: gallery1;
+    }
+    .gallery2{
+      grid-area: gallery2;
+    }
+    .gallery3 {
+      grid-area: gallery3;
+    }
+    .gallery4 {
+      grid-area: gallery4;
+    }
+    .gallery5 {
+      grid-area: gallery5;
+    }
+    .gallery6 {
+      grid-area: gallery6;
+    }
+    .gallery7 {
+      grid-area: gallery7;
+    }
+    .gallery8 {
+      grid-area: gallery8;
+    }
+    .gallery9 {
+      grid-area: gallery9;
+    }
+    .blank1 {
+      grid-area: blank1;
+    }
+    .blank2 {
+      grid-area: blank2;
+    }
+  }
+}
+
+/*-----Testimonials----------*/
+.testimonials {
+  @include displayFlex(column);
+  justify-content: flex-start;
+  height: 80vh;
+  box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
+  position: relative;
+  padding-top: 10vh;
+  @include for-tablets {
+    height: 60vh;
+  }
+  @include for-phones {
+    height: auto;
+  }
+  .testimonials-wrapper {
+    @include displayFlex(row);
+    justify-content: center;
+    height: 80%;
+    width: 70%;
+    @include for-tablets {
+      height: 70%;
+      width: 80%;
+    }  
+    @include for-phones {
+      @include displayFlex(column);
+      height: auto;
+      width: 70%;
+    } 
+    justify-content: space-between;
+    .testimonial-card {
+      @include displayFlex(column);
+      width: 32%;
+      height: 75%;
+      border-radius: 15px;
+      background: radial-gradient(110.17% 110.17% at 50% 50%, #F0F4EF 0%, rgba(240, 244, 239, 0) 100%);
+      box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      @include for-tablets {
+        padding: 0.8rem 1.5rem;
+        height: 90%;
+      }
+      @include for-phones {
+        padding: 0.6rem 1rem;
+        height: auto;
+        width: 70%;
+        margin: 1rem 0;
+      }
+      img {
+        height: 7vh;
+        width: auto;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        box-shadow: $box-dark-shadow;
+        @include for-tablets {
+          height: 6vh;
+          margin-bottom: 0.75rem;
+        }
+        @include for-phones {
+          height: 8vh;
+          margin-bottom: 0.6rem;
+        }
+      }
+      h3 {
+        font-size: 1rem;
+        color: $color-dark-red;
+        text-align: center;
+        @include for-tablets {
+          font-size: 0.7rem;
+        } 
+        @include for-phones {
+          font-size: 1.2rem;
+        } 
+      }
+      p {
+        color: $color-black;
+        font-size: 0.85rem;
+        text-align: justify;
+        @include for-tablets {
+          font-size: 0.7rem;
+          text-align: center;
+        } 
+        @include for-phones {
+          font-size: 0.9rem;
+          text-align: center;
+        }
+
+      }
+    }
+  }
+  span {
+    font-size: 5rem;
+    color: $color-light-blue;
+    @include for-tablets {
+      font-size: 3rem;
+    }
+    @include for-phones {
+      font-size: 2rem;
+    }
+  }
+  .quote-left {
+    position: absolute;
+    top: 15vh;
+    left: 6vw;
+  }
+  .quote-right {
+    position: absolute;
+    bottom: 7vh;
+    right: 6vw;
+  }
+  @include for-tablets {
+    .quote-left {
+      top: 15vh;
+      left: 2vw;
+    }
+    .quote-right {
+      bottom: 10vh;
+      right: 2vw;
+    }
+  }
+  @include for-phones {
+    .quote-left {
+      top: 15vh;
+      left: 10vw;
+    }
+    .quote-right {
+      position: absolute;
+      bottom: 1vh;
+      right: 10vw;
+    }
+  }
+}
+
+/*----------About-us----------*/
+.about-us {
+  height: 100vh;
+  padding-top: 10vh;
+  box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
+  @include for-tablets {
+    height: 85vh;
+  }
+  @include for-phones {
+    height: auto;
+  }
+  .about-div {
+    width: 90%;
+    height: 40%;
+    @include displayFlex(row);
+    justify-content: space-between;
+    @include for-phones {
+      @include displayFlex(column);
+    }
+    img {
+      width: 25vw;
+      height: auto;
+      box-shadow: $box-dark-shadow;
+      @include for-phones {
+        width: 50vw;
+      }
+    }
+    p {
+      font-size: 0.9rem;
+      width: 40%;
+      text-align: justify;
+      @include for-tablets {
+        font-size: 0.7rem;
+      }
+      @include for-phones {
+        font-size: 0.9rem;
+        width: 100%;
+        margin-top: 2rem;
+      }
+    }
+    .icon-about-us {
+      border-radius: 50%;
+      @include for-phones {
+        width: 25vw;
+      }
+    }
+  }
+  .location {
+    @include displayFlex(row);
+    width: 90%;
+    height: 40%;
+    margin-top: 2rem;
+    @include for-tablets {
+      margin-top: 1rem;
+    }
+    @include for-phones {
+      @include displayFlex(column);
+      margin-top: 2rem;
+    }
+
+    .our-hq {
+      height: 100%;
+      width: 50%;
+      @include displayFlex(column);
+      h3 {
+        color: $color-light-blue;
+        text-align: end;
+      }
+      .our-hq-description {
+        @include displayFlex(row);
+        justify-content: space-around;
+        height: 90%;
+        width: 100%;
+        @include for-phones {
+          @include displayFlex(column);
+        }
+        img {
+          width: 27vw;
+          height: auto;
+          @include for-phones {
+            width: 50vw;
+          }
+        }
+        p {
+          font-size: 0.8rem;
+          width: 25%;
+          text-align: end;
+          @include for-tablets {
+            font-size: 0.7rem;
+          }
+          @include for-phones {
+            font-size: 0.9rem;
+            width: 100%;
+            text-align: center;
+          }
+        }
+      }
+      
+    }
+    .map {
+      width: 50%;
+      padding: 0 2rem;
+      @include for-phones {
+        width: 80%;
+        margin-bottom: 2rem;
+      }
+      .map-responsive {
+        overflow: hidden;
+        padding-bottom: 40%;
+        position: relative;
+        height: 0;
+        @include for-tablets {
+          padding-bottom: 70%;
+        }
+        @include for-phones {
+          padding-bottom: 100%;
+        }
+        iframe {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*--------FAQ-----------*/
+.faq {
+  height: 73vh;
+  padding-top: 10vh;
+  justify-content: flex-start;
+  background: url('../images/faq-bg.png'), rgba(55, 63, 71, 0.7);
+  background-size: cover;
+  box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
+  @include for-tablets {
+    height: 60vh;
+  }
+  @include for-phones {
+    height: 60vh;
+  }
+  .faq-wrapper {
+    @include displayFlex(column);
+    justify-content: flex-start;
+    width: 50%;
+    @include for-phones {
+      width: 80%;
+    }
+    .faq-question {
+      background: $color-light-blue;
+      width: 100%;
+      opacity: 0.9;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      transition: $basic-transition;
+      i, h4, p {
+        pointer-events: none;
+      }
+      i {
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 10px;
+        margin-left: 1rem;
+      }
+      p {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+      }
+      h4 {
+        margin: 0;
+        width: 95%;
+      }
+      .faq-answer {
+        height: 0;
+        overflow: hidden;
+        transition: $basic-transition;
+      }
+      @include for-tablets {
+        i {
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+      @include for-phones {
+        i {
+          font-size: 1.4rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+        h4 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+/*------------Footer------------*/
+.footer {
+  height: 40vh;
+  @include displayFlex(column);
+  @include for-tablets {
+    height: 30vh;
+  }
+  @include for-phones {
+    height: auto;
+  }
+  .main-footer {
+    @include displayFlex(column);
+    height: 90%;
+    width: 100%;
+    background: $color-black;
+    .column-footer {
+      @include displayFlex(row);
+      justify-content: space-between;
+      width: 90%;
+      height: 60%;
+      @include for-phones {
+        @include displayFlex(column)
+      }
+      img {
+        height: 8rem;
+        width: auto;
+        border-radius: 50%;
+        @include for-phones {
+          display: none;
+        }
+      }
+      .address-footer, .contact-footer, .connect-footer {
+        @include displayFlex(column);
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        line-height: 1.2;
+        width: 25%;
+        height: 100%;
+        position: relative;
+        @include for-phones {
+          width: 100%;
+          justify-content: center;
+          align-items: center;  
+        }
+        h3 {
+          color: $color-light-blue;
+          @include for-phones {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+          }
+        }
+        span {
+          margin: auto 0.5rem;
+          color: $color-dark-red;
+          font-size: 1.5rem;
+          @include for-tablets {
+            font-size: 1.2rem;
+          }
+          @include for-phones {
+            font-size: 1.5rem;
+          }
+        }
+        p {
+          font-size: 0.8rem;
+          text-align: left;
+          margin: 0;
+          @include for-tablets {
+            font-size: 0.7rem;
+          }
+          @include for-phones {
+            font-size: 1rem;
+            text-align: center;
+          }
+        }
+        .social-icons-footer {
+          width: 100%;
+          @include displayFlex(row);
+          justify-content: flex-start;
+          font-size: 2rem;
+          @include for-tablets {
+            font-size: 1.5rem;
+          }
+          @include for-phones {
+            font-size: 2rem;
+            justify-content: center;
+          }
+          a {
+            margin: 0 1rem;
+          }
+          i {
+            color: $color-dark-yellow;
+            transition: $basic-transition;
+          }
+          a:hover i {
+            color: $color-dark-red;
+          }
+        }
+      }
+      .address-footer {
+        margin-left: 3rem;
+        @include for-phones {
+          margin-left: 0;
+        }
+        span {
+          position: absolute;
+          top: 40%;
+          left: 4.5rem;
+          @include for-tablets {
+            top: 45%;
+            left: 4rem;
+          }
+          @include for-phones {
+            position: relative;
+            top: 10%;
+            left: 0;
+          }
+        }
+      }
+      .contact-footer {
+        @include for-phones {
+          @include displayFlex(column);
+          margin-top: 2rem;
+        }
+        p {
+          margin-top: 2rem;
+          margin-left: 2rem;
+          @include for-phones {
+            margin: 0;
+            margin-top: 1rem;
+          }
+        }
+
+        .fa-phone {
+          position: absolute;
+          left: 0;
+          top: 32%;
+          @include for-tablets {
+            top: 36%;
+            left: 5%;
+          }
+          @include for-phones {
+            position: relative;
+            top: -9vh;
+            left: 0;
+          }
+        }
+        .fa-envelope {
+          position: absolute;
+          left: 0;
+          top: 58%;
+          @include for-tablets {
+            top: 72%;
+            left: 5%;
+          }
+          @include for-phones {
+            position: relative;
+            top: -7vh;
+            left: 0;
+          }
+        }
+      }
+    }
+    .row-footer {
+      margin-top: 1rem;
+      @include for-phones {
+        text-align: center;
+      }
+      li {
+        display: inline-block;
+        margin: 0 1rem;
+        font-size: 1rem;
+        @include for-tablets {
+          font-size: 0.8rem;
+        }
+        @include for-phones {
+          font-size: 1.5rem;
+        }
+      }
+      a {
+        transition: $basic-transition;
+      }
+      a:hover {
+        color: $color-dark-yellow;
+      }
+    }
+  }
+  .low-footer {
+    @include displayFlex(row);
+    justify-content: space-between;
+    height: 10%;
+    width: 100%;
+    background:  #0B203E;
+    p, a{
+      font-size: 0.5rem;
+      color: $color-white;
+      @include for-phones {
+        font-size: 0.75rem;
+      }
+    }
+    li, p {
+      display: inline-block;
+    }
+    p, ul {
+      margin: auto 2rem;
+      @include for-phones {
+        margin: auto 0.3rem;
+      }
+    }
+    li {
+      margin: 0 1rem;
+    }
+    @include for-phones {
+      margin: 0 0.3rem;
+    }
+  }
+}
+
