@@ -1910,8 +1910,10 @@ section {
 /*-----Gallery--------*/
 .gallery {
   height: 100vh;
-  background-image: url("../images/maplePNGBW.jpg"), linear-gradient(258.94deg, rgba(4, 6, 12, 0.7) -22.75%, rgba(12, 34, 67, 0.7) -21.42%, rgba(22, 74, 145, 0.7) 7.92%, rgba(0, 0, 0, 0.7) 32.58%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url("../images/maplePNGBW.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/maplePNGBW.jpg");
   background-size: cover;
+  background-position: center;
   padding-top: 10vh;
 }
 
@@ -1968,6 +1970,9 @@ section {
      object-fit: fill;
   width: 100%;
   max-height: 100%;
+  position: relative;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 .gallery .gallery-wrapper div {
@@ -1976,10 +1981,25 @@ section {
   display: flex;
   height: 100%;
   width: 100%;
-  -webkit-box-shadow: 0px 0px 6px 6px rgba(12, 182, 227, 0.5);
-          box-shadow: 0px 0px 6px 6px rgba(12, 182, 227, 0.5);
+}
+
+.gallery .gallery-wrapper div .zoom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
+  opacity: 0;
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+  pointer-events: none;
+}
+
+.gallery .gallery-wrapper div:hover .zoom {
+  opacity: 1;
+}
+
+.gallery .gallery-wrapper div:hover img {
+  opacity: 0.9;
 }
 
 .gallery .gallery-wrapper .gallery1 {
@@ -2085,10 +2105,9 @@ section {
       -ms-flex-pack: start;
           justify-content: flex-start;
   height: 80vh;
-  -webkit-box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
-          box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
   position: relative;
   padding-top: 10vh;
+  background: #abcad3;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -2100,6 +2119,7 @@ section {
 @media (max-width: 599px) {
   .testimonials {
     height: auto;
+    padding-bottom: 5vh;
   }
 }
 
@@ -2120,6 +2140,7 @@ section {
   justify-content: center;
   height: 80%;
   width: 70%;
+  position: relative;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -2127,7 +2148,7 @@ section {
 
 @media (min-width: 600px) and (max-width: 900px) {
   .testimonials .testimonials-wrapper {
-    height: 70%;
+    height: auto;
     width: 80%;
   }
 }
@@ -2148,7 +2169,7 @@ section {
         -ms-flex-direction: column;
             flex-direction: column;
     height: auto;
-    width: 70%;
+    width: 95%;
   }
 }
 
@@ -2167,26 +2188,27 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 32%;
-  height: 75%;
+  height: auto;
   border-radius: 15px;
   background: radial-gradient(110.17% 110.17% at 50% 50%, #f0f4ef 0%, rgba(240, 244, 239, 0) 100%);
-  -webkit-box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.5);
-  padding: 1rem 2rem;
+  -webkit-box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 1rem;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   .testimonials .testimonials-wrapper .testimonial-card {
-    padding: 0.8rem 1.5rem;
-    height: 90%;
+    padding: 1rem 1rem;
+    height: auto;
   }
 }
 
 @media (max-width: 599px) {
   .testimonials .testimonials-wrapper .testimonial-card {
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1rem;
     height: auto;
-    width: 70%;
+    width: 90%;
+    max-width: 300px;
     margin: 1rem 0;
   }
 }
@@ -2196,8 +2218,8 @@ section {
   width: auto;
   border-radius: 50%;
   margin-bottom: 1rem;
-  -webkit-box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -2254,7 +2276,7 @@ section {
 
 .testimonials span {
   font-size: 5rem;
-  color: #abcad3;
+  color: #c92b14;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -2271,36 +2293,25 @@ section {
 
 .testimonials .quote-left {
   position: absolute;
-  top: 15vh;
-  left: 6vw;
+  top: -5%;
+  left: -10%;
 }
 
 .testimonials .quote-right {
   position: absolute;
-  bottom: 7vh;
-  right: 6vw;
-}
-
-@media (min-width: 600px) and (max-width: 900px) {
-  .testimonials .quote-left {
-    top: 15vh;
-    left: 2vw;
-  }
-  .testimonials .quote-right {
-    bottom: 10vh;
-    right: 2vw;
-  }
+  bottom: -5%;
+  right: -10%;
 }
 
 @media (max-width: 599px) {
   .testimonials .quote-left {
-    top: 15vh;
-    left: 10vw;
+    top: 0;
+    left: 0;
   }
   .testimonials .quote-right {
     position: absolute;
-    bottom: 1vh;
-    right: 10vw;
+    bottom: 0;
+    right: 0;
   }
 }
 

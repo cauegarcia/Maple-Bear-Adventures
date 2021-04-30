@@ -3,7 +3,9 @@
 const setFade = (() => {
   let fadeRight = document.querySelectorAll(".fade-right");
   let fadeLeft = document.querySelectorAll(".fade-left");
-  if (window.innerWidth < 768) return;
+  if (window.innerWidth < 768) {
+    return { fadeLeft, fadeRight };
+  }
 
   fadeRight.forEach((element) => {
     element.style.opacity = "0";
@@ -42,9 +44,7 @@ window.addEventListener("scroll", () => {
 
   fadeSetters.forEach((setter, index) => {
     if (window.innerWidth < 768) return;
-
     const distanceElement = setter.getBoundingClientRect();
-
     if (distanceElement.top < window.innerHeight - 150) {
       setFade.fadeLeft[index].style.opacity = "1";
       setFade.fadeLeft[index].style.transform = "translateX(0)";
@@ -63,15 +63,6 @@ window.addEventListener("scroll", () => {
         setFade.fadeRight[3].style.transform = "translateX(0)";
       }
     }
-    /* if (
-      distanceElement.top < 0 - 50 ||
-      distanceElement.top > window.innerHeight
-    ) {
-      setFade.fadeLeft[index].style.opacity = "0";
-      setFade.fadeLeft[index].style.transform = "translateX(-20vw)";
-      setFade.fadeRight[index].style.opacity = "0";
-      setFade.fadeRight[index].style.transform = "translateX(20vw)";
-    } */
   });
 });
 
@@ -209,12 +200,7 @@ const setGalleryEffect = (() => {
 
   const translate = (div) => {
     div = div.target;
-    /*check if effect is already running*/
-    if (div.classList.contains("control3d")) {
-      return;
-    } else {
-      div.classList.add("control3d");
-    }
+    console.log(div);
     const divDistance = div.getBoundingClientRect();
     const wrapper = document.querySelector(".gallery-wrapper");
     const wrapperDistance = wrapper.getBoundingClientRect();
@@ -235,25 +221,16 @@ const setGalleryEffect = (() => {
       distanceY = wrapperY - divY - (divDistance.bottom - divDistance.top) / 2;
     }
     div.style.transform = `translate3d(${distanceX}px, ${distanceY}px, 300px)`;
-
-    setTimeout(() => {
-      div.addEventListener("mouseenter", translate, { once: true });
-    }, 2000);
+    div.addEventListener("click", () => {
+      div.style.transform = `translate3d(0, 0, 0)`;
+      div.addEventListener("click", (div) => {
+        return translate(div);
+      });
+    });
   };
   divs.forEach((div) =>
-    div.addEventListener(
-      "mouseenter",
-      (div) => {
-        return translate(div);
-      },
-      { once: true }
-    )
-  );
-
-  divs.forEach((div) =>
-    div.addEventListener("mouseleave", () => {
-      div.style.transform = `translate3d(0, 0, 0)`;
-      div.classList.remove("control3d");
+    div.addEventListener("click", (div) => {
+      return translate(div);
     })
   );
 })();

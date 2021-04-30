@@ -877,15 +877,14 @@ section {
 /*-----Gallery--------*/
 .gallery {
   height: 100vh;
-  background-image: url("../images/maplePNGBW.jpg"),
-    linear-gradient(
-      258.94deg,
-      rgba(4, 6, 12, 0.7) -22.75%,
-      rgba(12, 34, 67, 0.7) -21.42%,
-      rgba(22, 74, 145, 0.7) 7.92%,
-      rgba(0, 0, 0, 0.7) 32.58%
-    );
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("../images/maplePNGBW.jpg");
   background-size: cover;
+  background-position: center;
   padding-top: 10vh;
   @include for-tablets {
     height: 70vh;
@@ -925,13 +924,30 @@ section {
       object-fit: fill;
       width: 100%;
       max-height: 100%;
+      position: relative;
+      transition: $basic-transition;
     }
     div {
       display: flex;
       height: 100%;
       width: 100%;
-      box-shadow: 0px 0px 6px 6px rgba(12, 182, 227, 0.5);
-      transition: $basic-transition;
+      .zoom {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1.5rem;
+        opacity: 0;
+        transition: $basic-transition;
+        pointer-events: none;
+      }
+      &:hover {
+        .zoom {
+          opacity: 1;
+        }
+        img {
+          opacity: 0.9;
+        }
+      }
     }
     .gallery1 {
       grid-area: gallery1;
@@ -974,50 +990,53 @@ section {
   @include displayFlex(column);
   justify-content: flex-start;
   height: 80vh;
-  box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
   position: relative;
   padding-top: 10vh;
+  background: $color-light-blue;
   @include for-tablets {
     height: 60vh;
   }
   @include for-phones {
     height: auto;
+    padding-bottom: 5vh;
   }
   .testimonials-wrapper {
     @include displayFlex(row);
     justify-content: center;
     height: 80%;
     width: 70%;
+    position: relative;
     @include for-tablets {
-      height: 70%;
+      height: auto;
       width: 80%;
     }
     @include for-phones {
       @include displayFlex(column);
       height: auto;
-      width: 70%;
+      width: 95%;
     }
     justify-content: space-between;
     .testimonial-card {
       @include displayFlex(column);
       width: 32%;
-      height: 75%;
+      height: auto;
       border-radius: 15px;
       background: radial-gradient(
         110.17% 110.17% at 50% 50%,
         #f0f4ef 0%,
         rgba(240, 244, 239, 0) 100%
       );
-      box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.5);
-      padding: 1rem 2rem;
+      box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.5);
+      padding: 1.5rem 1rem;
       @include for-tablets {
-        padding: 0.8rem 1.5rem;
-        height: 90%;
+        padding: 1rem 1rem;
+        height: auto;
       }
       @include for-phones {
-        padding: 0.6rem 1rem;
+        padding: 0.8rem 1rem;
         height: auto;
-        width: 70%;
+        width: 90%;
+        max-width: 300px;
         margin: 1rem 0;
       }
       img {
@@ -1025,7 +1044,7 @@ section {
         width: auto;
         border-radius: 50%;
         margin-bottom: 1rem;
-        box-shadow: $box-dark-shadow;
+        box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.5);
         @include for-tablets {
           height: 6vh;
           margin-bottom: 0.75rem;
@@ -1063,7 +1082,7 @@ section {
   }
   span {
     font-size: 5rem;
-    color: $color-light-blue;
+    color: $color-dark-red;
     @include for-tablets {
       font-size: 3rem;
     }
@@ -1073,33 +1092,24 @@ section {
   }
   .quote-left {
     position: absolute;
-    top: 15vh;
-    left: 6vw;
+    top: -5%;
+    left: -10%;
   }
   .quote-right {
     position: absolute;
-    bottom: 7vh;
-    right: 6vw;
+    bottom: -5%;
+    right: -10%;
   }
-  @include for-tablets {
-    .quote-left {
-      top: 15vh;
-      left: 2vw;
-    }
-    .quote-right {
-      bottom: 10vh;
-      right: 2vw;
-    }
-  }
+
   @include for-phones {
     .quote-left {
-      top: 15vh;
-      left: 10vw;
+      top: 0;
+      left: 0;
     }
     .quote-right {
       position: absolute;
-      bottom: 1vh;
-      right: 10vw;
+      bottom: 0;
+      right: 0;
     }
   }
 }
