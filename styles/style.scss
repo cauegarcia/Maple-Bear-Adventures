@@ -107,6 +107,12 @@ $basic-transition: all 0.5s ease-in;
     padding: 0.2rem 0.5rem;
     bottom: 2rem;
     left: 2rem;
+    color: #000000;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    );
+    border-radius: 10px;
     @include for-tablets {
       display: none;
     }
@@ -205,21 +211,21 @@ h1 {
 h2 {
   color: $color-dark-yellow;
   @include for-phones {
-    font-size: 1.5rem;
-  }
-  @include for-tablets {
     font-size: 2rem;
   }
+  @include for-tablets {
+    font-size: 2.4rem;
+  }
   @include for-desktops {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 }
 h3 {
   @include for-phones {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   @include for-tablets {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
   @include for-desktops {
     font-size: 1.75rem;
@@ -267,7 +273,7 @@ li {
   );
   overflow-x: hidden;
 }
-/*------------Hero---------------*/
+
 /*Header*/
 .header {
   position: fixed;
@@ -309,7 +315,7 @@ li {
   .links-header {
     @include displayFlex(row);
     margin-right: 5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     @include for-tablets {
       display: none;
     }
@@ -374,9 +380,10 @@ li {
   top: 1.5rem;
   right: 3rem;
   @include for-phones {
+    position: relative;
+    top: -3%;
+    right: 6%;
     font-size: 2.5rem;
-    top: 10%;
-    right: 10%;
   }
   @include for-desktops {
     display: none;
@@ -466,7 +473,7 @@ section {
       min-height: 65%;
     }
     @include for-phones {
-      margin-top: 20vh;
+      margin-top: 17vh;
       margin-left: 1rem;
       min-height: 60%;
       width: 75%;
@@ -490,19 +497,20 @@ section {
     a {
       position: absolute;
       left: 50%;
-      bottom: 15%;
+      bottom: 10%;
       transform: translateX(-50%);
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: $color-dark-red;
       display: block;
       width: 300px;
       text-align: center;
       @include for-tablets {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
       }
       @include for-phones {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         width: 200px;
+        bottom: 8%;
       }
       display: inline;
       transition: $basic-transition;
@@ -586,9 +594,15 @@ section {
   .scroll-down {
     position: absolute;
     left: 50%;
-    bottom: 7%;
+    bottom: 4%;
     transform: translateX(-50%);
     animation: fade 1s infinite alternate;
+    @include for-phones {
+      bottom: 3%;
+      i {
+        font-size: 1.4rem;
+      }
+    }
     @keyframes fade {
       100% {
         opacity: 0;
@@ -631,7 +645,7 @@ section {
 .adventures {
   min-height: 50vh;
   padding-top: 5vh;
-  background: $color-white;
+  background: $color-black;
 
   .activities {
     @include displayFlex(row);
@@ -711,7 +725,7 @@ section {
 /*-----How it works-------*/
 
 .how-it-works {
-  height: 100vh;
+  min-height: 70vh;
   position: relative;
   background: $color-light-blue;
   //box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
@@ -726,7 +740,6 @@ section {
   }
   .how-wrapper {
     width: 70%;
-    height: 70%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -876,7 +889,7 @@ section {
 
 /*-----Gallery--------*/
 .gallery {
-  height: 100vh;
+  min-height: 80vh;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.9),
@@ -885,7 +898,7 @@ section {
     url("../images/maplePNGBW.jpg");
   background-size: cover;
   background-position: center;
-  padding-top: 10vh;
+  padding: 10vh 0;
   @include for-tablets {
     height: 70vh;
   }
@@ -895,6 +908,7 @@ section {
   .gallery-wrapper {
     height: 70%;
     overflow: visible;
+    max-width: 1000px;
     @include for-tablets {
       width: 60%;
     }
@@ -926,28 +940,12 @@ section {
       max-height: 100%;
       position: relative;
       transition: $basic-transition;
+      cursor: pointer;
     }
     div {
       display: flex;
       height: 100%;
       width: 100%;
-      .zoom {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        font-size: 1.5rem;
-        opacity: 0;
-        transition: $basic-transition;
-        pointer-events: none;
-      }
-      &:hover {
-        .zoom {
-          opacity: 1;
-        }
-        img {
-          opacity: 0.9;
-        }
-      }
     }
     .gallery1 {
       grid-area: gallery1;
@@ -1116,11 +1114,11 @@ section {
 
 /*----------About-us----------*/
 .about-us {
-  height: 100vh;
+  min-height: 70vh;
   padding-top: 10vh;
   box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
   @include for-tablets {
-    height: 85vh;
+    height: auto;
   }
   @include for-phones {
     height: auto;
@@ -1130,6 +1128,10 @@ section {
     height: 40%;
     @include displayFlex(row);
     justify-content: space-between;
+    @include for-tablets {
+      @include displayFlex(column);
+      height: auto;
+    }
     @include for-phones {
       @include displayFlex(column);
     }
@@ -1137,27 +1139,35 @@ section {
       width: 25vw;
       height: auto;
       box-shadow: $box-dark-shadow;
+      @include for-tablets {
+        width: 60%;
+      }
       @include for-phones {
-        width: 50vw;
+        width: 100%;
       }
     }
     p {
-      font-size: 0.9rem;
-      width: 40%;
+      font-size: 1rem;
+      width: 60%;
       text-align: justify;
+      margin: 0 1rem;
       @include for-tablets {
-        font-size: 0.7rem;
+        width: 90%;
+        margin-top: 1rem;
+        margin-left: 1rem;
       }
       @include for-phones {
-        font-size: 0.9rem;
         width: 100%;
-        margin-top: 2rem;
+        margin-top: 1rem;
       }
     }
     .icon-about-us {
       border-radius: 50%;
+      @include for-tablets {
+        display: none;
+      }
       @include for-phones {
-        width: 25vw;
+        display: none;
       }
     }
   }
@@ -1165,47 +1175,63 @@ section {
     @include displayFlex(row);
     width: 90%;
     height: 40%;
-    margin-top: 2rem;
+    margin: 2rem 0;
     @include for-tablets {
       margin-top: 1rem;
+      @include displayFlex(column);
     }
     @include for-phones {
       @include displayFlex(column);
-      margin-top: 2rem;
+      margin-top: 1rem;
+      height: auto;
     }
 
     .our-hq {
       height: 100%;
-      width: 50%;
+      width: 60%;
       @include displayFlex(column);
+      @include for-tablets {
+        width: 100%;
+      }
+      @include for-phones {
+        width: 100%;
+      }
       h3 {
         color: $color-light-blue;
         text-align: end;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
       }
       .our-hq-description {
         @include displayFlex(row);
         justify-content: space-around;
         height: 90%;
         width: 100%;
+        align-items: flex-start;
         @include for-phones {
           @include displayFlex(column);
         }
         img {
           width: 27vw;
           height: auto;
+          @include for-tablets {
+            width: 40%;
+          }
           @include for-phones {
-            width: 50vw;
+            width: 100%;
+            margin: 1rem 0;
           }
         }
         p {
-          font-size: 0.8rem;
-          width: 25%;
+          font-size: 1rem;
+          width: 40%;
           text-align: end;
           @include for-tablets {
-            font-size: 0.7rem;
+            width: 55%;
+            text-align: start;
+            padding-top: 1rem;
           }
           @include for-phones {
-            font-size: 0.9rem;
             width: 100%;
             text-align: center;
           }
@@ -1213,15 +1239,22 @@ section {
       }
     }
     .map {
-      width: 50%;
-      padding: 0 2rem;
+      width: 40%;
+      padding: 0 1rem;
+      padding-top: 1.5rem;
+      @include for-tablets {
+        width: 60%;
+        margin: 2rem 0;
+        padding: 0;
+      }
       @include for-phones {
-        width: 80%;
+        width: 100%;
         margin-bottom: 2rem;
+        padding: 0;
       }
       .map-responsive {
         overflow: hidden;
-        padding-bottom: 40%;
+        padding-bottom: 50%;
         position: relative;
         height: 0;
         @include for-tablets {
@@ -1244,27 +1277,28 @@ section {
 
 /*--------FAQ-----------*/
 .faq {
-  height: 73vh;
+  min-height: 40vh;
   padding-top: 10vh;
   justify-content: flex-start;
   background: url("../images/faq-bg.png"), rgba(55, 63, 71, 0.7);
   background-size: cover;
   box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
   @include for-tablets {
-    height: 60vh;
+    min-height: 50vh;
   }
   @include for-phones {
-    height: 60vh;
+    min-height: 60vh;
   }
   .faq-wrapper {
     @include displayFlex(column);
     justify-content: flex-start;
     width: 50%;
+    margin-bottom: 2rem;
     @include for-phones {
-      width: 80%;
+      width: 95%;
     }
     .faq-question {
-      background: $color-light-blue;
+      background: cornflowerblue;
       width: 100%;
       opacity: 0.9;
       margin: 0.5rem 0;
@@ -1337,10 +1371,14 @@ section {
     height: 90%;
     width: 100%;
     background: $color-black;
+    @include for-phones {
+      padding-top: 2rem;
+    }
     .column-footer {
       @include displayFlex(row);
       justify-content: space-between;
-      width: 90%;
+      width: 100%;
+      padding: 0 1rem;
       height: 60%;
       @include for-phones {
         @include displayFlex(column);
@@ -1366,6 +1404,7 @@ section {
         position: relative;
         @include for-phones {
           width: 100%;
+          height: auto;
           justify-content: center;
           align-items: center;
         }
@@ -1424,9 +1463,11 @@ section {
         }
       }
       .address-footer {
-        margin-left: 3rem;
+        margin-left: 2rem;
+        width: 20%;
         @include for-phones {
           margin-left: 0;
+          width: auto;
         }
         span {
           position: absolute;
@@ -1440,50 +1481,65 @@ section {
             position: relative;
             top: 10%;
             left: 0;
+            margin: 1rem;
           }
         }
       }
       .contact-footer {
+        width: 30%;
+        justify-content: flex-start;
+        @include for-tablets {
+          width: 40%;
+        }
         @include for-phones {
           @include displayFlex(column);
-          margin-top: 2rem;
+          margin-bottom: 1rem;
+          width: 90%;
         }
         p {
-          margin-top: 2rem;
-          margin-left: 2rem;
+          margin-top: 1rem;
           @include for-phones {
             margin: 0;
             margin-top: 1rem;
           }
         }
-
+        .email-footer {
+          position: relative;
+          top: -20%;
+        }
         .fa-phone {
-          position: absolute;
-          left: 0;
-          top: 32%;
+          position: relative;
+          top: -100%;
+          left: 450%;
           @include for-tablets {
-            top: 36%;
-            left: 5%;
+            top: -120%;
+            left: 500%;
           }
           @include for-phones {
             position: relative;
-            top: -9vh;
+            top: 0;
             left: 0;
+            margin: 0.5rem 0;
           }
         }
         .fa-envelope {
-          position: absolute;
-          left: 0;
-          top: 58%;
+          position: relative;
+          top: -200%;
+          left: 950%;
           @include for-tablets {
-            top: 72%;
-            left: 5%;
+            top: -230%;
+            left: 1050%;
           }
           @include for-phones {
             position: relative;
-            top: -7vh;
-            left: 0;
+            margin: 0.5rem 0;
           }
+        }
+      }
+      .connect-footer {
+        width: 30%;
+        @include for-phones {
+          width: 100%;
         }
       }
     }
@@ -1496,15 +1552,19 @@ section {
         display: inline-block;
         margin: 0 1rem;
         font-size: 1rem;
-        @include for-tablets {
-          font-size: 0.8rem;
-        }
         @include for-phones {
-          font-size: 1.5rem;
+          display: block;
+          padding: 0.5rem 0;
         }
       }
       a {
         transition: $basic-transition;
+        @include for-tablets {
+          font-size: 0.8rem;
+        }
+        @include for-phones {
+          font-size: 1rem;
+        }
       }
       a:hover {
         color: $color-dark-yellow;
@@ -1519,7 +1579,7 @@ section {
     background: #0b203e;
     p,
     a {
-      font-size: 0.5rem;
+      font-size: 0.8rem;
       color: $color-white;
       @include for-phones {
         font-size: 0.75rem;

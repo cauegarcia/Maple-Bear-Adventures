@@ -199,8 +199,9 @@ const setGalleryEffect = (() => {
   const divs = document.querySelectorAll(".gallery3d");
 
   const translate = (div) => {
+    divs.forEach((oldDiv) => (oldDiv.style.transform = `translate3d(0, 0, 0)`));
     div = div.target;
-    console.log(div);
+
     const divDistance = div.getBoundingClientRect();
     const wrapper = document.querySelector(".gallery-wrapper");
     const wrapperDistance = wrapper.getBoundingClientRect();

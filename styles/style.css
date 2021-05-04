@@ -58,31 +58,31 @@ h2 {
 
 @media (max-width: 599px) {
   h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
 
 @media (min-width: 901px) {
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
 }
 
 @media (max-width: 599px) {
   h3 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -148,7 +148,6 @@ li {
   overflow-x: hidden;
 }
 
-/*------------Hero---------------*/
 /*Header*/
 .header {
   position: fixed;
@@ -233,7 +232,7 @@ li {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-right: 5rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -351,9 +350,10 @@ li {
 @media (max-width: 599px) {
   .sticky .menu-bar,
   .header .menu-bar {
+    position: relative;
+    top: -3%;
+    right: 6%;
     font-size: 2.5rem;
-    top: 10%;
-    right: 10%;
   }
 }
 
@@ -508,7 +508,7 @@ section {
 
 @media (max-width: 599px) {
   .hero .hero-content {
-    margin-top: 20vh;
+    margin-top: 17vh;
     margin-left: 1rem;
     min-height: 60%;
     width: 75%;
@@ -543,10 +543,10 @@ section {
 .hero .hero-content a {
   position: absolute;
   left: 50%;
-  bottom: 15%;
+  bottom: 10%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #c92b14;
   display: block;
   width: 300px;
@@ -558,14 +558,15 @@ section {
 
 @media (min-width: 600px) and (max-width: 900px) {
   .hero .hero-content a {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 599px) {
   .hero .hero-content a {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     width: 200px;
+    bottom: 8%;
   }
 }
 
@@ -713,11 +714,20 @@ section {
 .hero .scroll-down {
   position: absolute;
   left: 50%;
-  bottom: 7%;
+  bottom: 4%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   -webkit-animation: fade 1s infinite alternate;
           animation: fade 1s infinite alternate;
+}
+
+@media (max-width: 599px) {
+  .hero .scroll-down {
+    bottom: 3%;
+  }
+  .hero .scroll-down i {
+    font-size: 1.4rem;
+  }
 }
 
 @-webkit-keyframes fade {
@@ -782,7 +792,7 @@ section {
 .adventures {
   min-height: 50vh;
   padding-top: 5vh;
-  background: #f0f4ef;
+  background: #373f47;
 }
 
 .adventures .activities {
@@ -942,6 +952,10 @@ section {
   padding: 0.2rem 0.5rem;
   bottom: 2rem;
   left: 2rem;
+  color: #000000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6)));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+  border-radius: 10px;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -1102,6 +1116,10 @@ section {
   padding: 0.2rem 0.5rem;
   bottom: 2rem;
   left: 2rem;
+  color: #000000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6)));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+  border-radius: 10px;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -1262,6 +1280,10 @@ section {
   padding: 0.2rem 0.5rem;
   bottom: 2rem;
   left: 2rem;
+  color: #000000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6)));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+  border-radius: 10px;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -1422,6 +1444,10 @@ section {
   padding: 0.2rem 0.5rem;
   bottom: 2rem;
   left: 2rem;
+  color: #000000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6)));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+  border-radius: 10px;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -1582,6 +1608,10 @@ section {
   padding: 0.2rem 0.5rem;
   bottom: 2rem;
   left: 2rem;
+  color: #000000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6)));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+  border-radius: 10px;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -1674,7 +1704,7 @@ section {
 
 /*-----How it works-------*/
 .how-it-works {
-  height: 100vh;
+  min-height: 70vh;
   position: relative;
   background: #abcad3;
   padding-top: 10vh;
@@ -1696,7 +1726,6 @@ section {
 
 .how-it-works .how-wrapper {
   width: 70%;
-  height: 70%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -1909,12 +1938,12 @@ section {
 
 /*-----Gallery--------*/
 .gallery {
-  height: 100vh;
+  min-height: 80vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url("../images/maplePNGBW.jpg");
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/maplePNGBW.jpg");
   background-size: cover;
   background-position: center;
-  padding-top: 10vh;
+  padding: 10vh 0;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
@@ -1932,6 +1961,7 @@ section {
 .gallery .gallery-wrapper {
   height: 70%;
   overflow: visible;
+  max-width: 1000px;
   width: 50%;
   display: -ms-grid;
   display: grid;
@@ -1973,6 +2003,7 @@ section {
   position: relative;
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+  cursor: pointer;
 }
 
 .gallery .gallery-wrapper div {
@@ -1981,25 +2012,6 @@ section {
   display: flex;
   height: 100%;
   width: 100%;
-}
-
-.gallery .gallery-wrapper div .zoom {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 1.5rem;
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
-  pointer-events: none;
-}
-
-.gallery .gallery-wrapper div:hover .zoom {
-  opacity: 1;
-}
-
-.gallery .gallery-wrapper div:hover img {
-  opacity: 0.9;
 }
 
 .gallery .gallery-wrapper .gallery1 {
@@ -2317,7 +2329,7 @@ section {
 
 /*----------About-us----------*/
 .about-us {
-  height: 100vh;
+  min-height: 70vh;
   padding-top: 10vh;
   -webkit-box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
           box-shadow: inset 0px 4px 20px 20px rgba(0, 0, 0, 0.53);
@@ -2325,7 +2337,7 @@ section {
 
 @media (min-width: 600px) and (max-width: 900px) {
   .about-us {
-    height: 85vh;
+    height: auto;
   }
 }
 
@@ -2356,6 +2368,25 @@ section {
           justify-content: space-between;
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-us .about-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+}
+
 @media (max-width: 599px) {
   .about-us .about-div {
     display: -webkit-box;
@@ -2381,29 +2412,37 @@ section {
           box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.4);
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-us .about-div img {
+    width: 60%;
+  }
+}
+
 @media (max-width: 599px) {
   .about-us .about-div img {
-    width: 50vw;
+    width: 100%;
   }
 }
 
 .about-us .about-div p {
-  font-size: 0.9rem;
-  width: 40%;
+  font-size: 1rem;
+  width: 60%;
   text-align: justify;
+  margin: 0 1rem;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   .about-us .about-div p {
-    font-size: 0.7rem;
+    width: 90%;
+    margin-top: 1rem;
+    margin-left: 1rem;
   }
 }
 
 @media (max-width: 599px) {
   .about-us .about-div p {
-    font-size: 0.9rem;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 }
 
@@ -2411,9 +2450,15 @@ section {
   border-radius: 50%;
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-us .about-div .icon-about-us {
+    display: none;
+  }
+}
+
 @media (max-width: 599px) {
   .about-us .about-div .icon-about-us {
-    width: 25vw;
+    display: none;
   }
 }
 
@@ -2433,12 +2478,25 @@ section {
           flex-direction: row;
   width: 90%;
   height: 40%;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   .about-us .location {
     margin-top: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -2457,13 +2515,14 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    height: auto;
   }
 }
 
 .about-us .location .our-hq {
   height: 100%;
-  width: 50%;
+  width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2479,9 +2538,23 @@ section {
           flex-direction: column;
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-us .location .our-hq {
+    width: 100%;
+  }
+}
+
+@media (max-width: 599px) {
+  .about-us .location .our-hq {
+    width: 100%;
+  }
+}
+
 .about-us .location .our-hq h3 {
   color: #abcad3;
   text-align: end;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .about-us .location .our-hq .our-hq-description {
@@ -2502,6 +2575,9 @@ section {
       justify-content: space-around;
   height: 90%;
   width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 @media (max-width: 599px) {
@@ -2527,47 +2603,65 @@ section {
   height: auto;
 }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-us .location .our-hq .our-hq-description img {
+    width: 40%;
+  }
+}
+
 @media (max-width: 599px) {
   .about-us .location .our-hq .our-hq-description img {
-    width: 50vw;
+    width: 100%;
+    margin: 1rem 0;
   }
 }
 
 .about-us .location .our-hq .our-hq-description p {
-  font-size: 0.8rem;
-  width: 25%;
+  font-size: 1rem;
+  width: 40%;
   text-align: end;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   .about-us .location .our-hq .our-hq-description p {
-    font-size: 0.7rem;
+    width: 55%;
+    text-align: start;
+    padding-top: 1rem;
   }
 }
 
 @media (max-width: 599px) {
   .about-us .location .our-hq .our-hq-description p {
-    font-size: 0.9rem;
     width: 100%;
     text-align: center;
   }
 }
 
 .about-us .location .map {
-  width: 50%;
-  padding: 0 2rem;
+  width: 40%;
+  padding: 0 1rem;
+  padding-top: 1.5rem;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .about-us .location .map {
+    width: 60%;
+    margin: 2rem 0;
+    padding: 0;
+  }
 }
 
 @media (max-width: 599px) {
   .about-us .location .map {
-    width: 80%;
+    width: 100%;
     margin-bottom: 2rem;
+    padding: 0;
   }
 }
 
 .about-us .location .map .map-responsive {
   overflow: hidden;
-  padding-bottom: 40%;
+  padding-bottom: 50%;
   position: relative;
   height: 0;
 }
@@ -2594,7 +2688,7 @@ section {
 
 /*--------FAQ-----------*/
 .faq {
-  height: 73vh;
+  min-height: 40vh;
   padding-top: 10vh;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -2607,13 +2701,13 @@ section {
 
 @media (min-width: 600px) and (max-width: 900px) {
   .faq {
-    height: 60vh;
+    min-height: 50vh;
   }
 }
 
 @media (max-width: 599px) {
   .faq {
-    height: 60vh;
+    min-height: 60vh;
   }
 }
 
@@ -2635,16 +2729,17 @@ section {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 50%;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 599px) {
   .faq .faq-wrapper {
-    width: 80%;
+    width: 95%;
   }
 }
 
 .faq .faq-wrapper .faq-question {
-  background: #abcad3;
+  background: cornflowerblue;
   width: 100%;
   opacity: 0.9;
   margin: 0.5rem 0;
@@ -2758,6 +2853,12 @@ section {
   background: #373f47;
 }
 
+@media (max-width: 599px) {
+  .footer .main-footer {
+    padding-top: 2rem;
+  }
+}
+
 .footer .main-footer .column-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2775,7 +2876,8 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 90%;
+  width: 100%;
+  padding: 0 1rem;
   height: 60%;
 }
 
@@ -2843,6 +2945,7 @@ section {
   .footer .main-footer .column-footer .contact-footer,
   .footer .main-footer .column-footer .connect-footer {
     width: 100%;
+    height: auto;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -2979,12 +3082,14 @@ section {
 }
 
 .footer .main-footer .column-footer .address-footer {
-  margin-left: 3rem;
+  margin-left: 2rem;
+  width: 20%;
 }
 
 @media (max-width: 599px) {
   .footer .main-footer .column-footer .address-footer {
     margin-left: 0;
+    width: auto;
   }
 }
 
@@ -3006,6 +3111,20 @@ section {
     position: relative;
     top: 10%;
     left: 0;
+    margin: 1rem;
+  }
+}
+
+.footer .main-footer .column-footer .contact-footer {
+  width: 30%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .footer .main-footer .column-footer .contact-footer {
+    width: 40%;
   }
 }
 
@@ -3024,13 +3143,13 @@ section {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 90%;
   }
 }
 
 .footer .main-footer .column-footer .contact-footer p {
-  margin-top: 2rem;
-  margin-left: 2rem;
+  margin-top: 1rem;
 }
 
 @media (max-width: 599px) {
@@ -3040,45 +3159,60 @@ section {
   }
 }
 
+.footer .main-footer .column-footer .contact-footer .email-footer {
+  position: relative;
+  top: -20%;
+}
+
 .footer .main-footer .column-footer .contact-footer .fa-phone {
-  position: absolute;
-  left: 0;
-  top: 32%;
+  position: relative;
+  top: -100%;
+  left: 450%;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   .footer .main-footer .column-footer .contact-footer .fa-phone {
-    top: 36%;
-    left: 5%;
+    top: -120%;
+    left: 500%;
   }
 }
 
 @media (max-width: 599px) {
   .footer .main-footer .column-footer .contact-footer .fa-phone {
     position: relative;
-    top: -9vh;
+    top: 0;
     left: 0;
+    margin: 0.5rem 0;
   }
 }
 
 .footer .main-footer .column-footer .contact-footer .fa-envelope {
-  position: absolute;
-  left: 0;
-  top: 58%;
+  position: relative;
+  top: -200%;
+  left: 950%;
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
   .footer .main-footer .column-footer .contact-footer .fa-envelope {
-    top: 72%;
-    left: 5%;
+    top: -230%;
+    left: 1050%;
   }
 }
 
 @media (max-width: 599px) {
   .footer .main-footer .column-footer .contact-footer .fa-envelope {
     position: relative;
-    top: -7vh;
-    left: 0;
+    margin: 0.5rem 0;
+  }
+}
+
+.footer .main-footer .column-footer .connect-footer {
+  width: 30%;
+}
+
+@media (max-width: 599px) {
+  .footer .main-footer .column-footer .connect-footer {
+    width: 100%;
   }
 }
 
@@ -3098,21 +3232,28 @@ section {
   font-size: 1rem;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
-  .footer .main-footer .row-footer li {
-    font-size: 0.8rem;
-  }
-}
-
 @media (max-width: 599px) {
   .footer .main-footer .row-footer li {
-    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem 0;
   }
 }
 
 .footer .main-footer .row-footer a {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .footer .main-footer .row-footer a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .footer .main-footer .row-footer a {
+    font-size: 1rem;
+  }
 }
 
 .footer .main-footer .row-footer a:hover {
@@ -3143,7 +3284,7 @@ section {
 
 .footer .low-footer p,
 .footer .low-footer a {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   color: #f0f4ef;
 }
 
