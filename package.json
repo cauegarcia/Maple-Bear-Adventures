@@ -1,0 +1,24 @@
+{
+  "name": "maple-bear-adventures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "babel": "babel --presets env main.js -o build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cauegarcia/Maple-Bear-Adventures.git"
+  },
+  "author": "Caue Moyano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cauegarcia/Maple-Bear-Adventures/issues"
+  },
+  "homepage": "https://github.com/cauegarcia/Maple-Bear-Adventures#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
