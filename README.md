@@ -33,7 +33,7 @@ The following technologies were used to build this website.
  <a href="#" title="Caue Moyano's Website">💻</a>
 
 
-Made with ❤️ by Caue Moyano 👋🏽 Keep in touch!
+Made by Caue Moyano 👋🏽 Keep in touch!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Caue-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/caue-garcia-moyano-758203142/)](https://www.linkedin.com/in/caue-garcia-moyano-758203142/) 
 [![Gmail Badge](https://img.shields.io/badge/-cauegmoyano@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:cauegmoyano@gmail.com)](mailto:cauegmoyano@gmail.com)
