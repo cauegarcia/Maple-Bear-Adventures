@@ -172,7 +172,6 @@ divQuestions.forEach((div) => {
         div.querySelector("span").innerHTML = `<i class="fas fa-plus"></i>`;
       }
     });
-    console.log(e.target.querySelector(".faq-answer"));
     if (answer.style.height === "0px" || answer.style.height === "") {
       answer.style.height = "20vh";
       icon.innerHTML = `<i class="fas fa-minus"></i>`;
@@ -242,7 +241,6 @@ const setBarsMenu = (() => {
   const showMenu = document.querySelector(".show-menu");
   const links = document.querySelectorAll(".menu-link-header");
   menuBar.addEventListener("click", () => {
-    console.log(showMenu.style);
     if (showMenu.style.opacity === "0" || showMenu.style.opacity == "") {
       showMenu.style.opacity = "1";
       showMenu.style.height = "35vh";
