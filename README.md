@@ -7,6 +7,10 @@
 <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/cauegarcia/Maple-Bear-Adventures">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/cauegarcia/Maple-Bear-Adventures">
 </p>
+<p align="center">
+ <a href="https://maple-bear.netlify.app/"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/04a192ec-ae83-49ab-8245-c157d07e6a85/deploy-status"></a><br>
+ <a href="https://maple-bear.netlify.app/">Visit the website - Maple Bear Adventures</a>
+</p>
 
 <h1 align="center">Maple-Bear-Adventures</h1>
 <p align="center">A tourism company that offers mesmerizing outdoor activities</p>
