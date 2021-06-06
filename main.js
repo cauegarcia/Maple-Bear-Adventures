@@ -1,3 +1,16 @@
+//loading page
+const loading = () => {
+  const loadingDiv = document.createElement("div");
+  const container = document.querySelector(".container");
+  loadingDiv.classList.add("loading");
+  loadingDiv.innerHTML = `<div class="loading-div"></div>`;
+  container.appendChild(loadingDiv);
+  setTimeout(() => {
+    loadingDiv.classList.remove("loading");
+  }, 2000);
+};
+window.addEventListener("DOMContentLoaded", loading);
+
 // fade effect initializer
 
 const setFade = (() => {

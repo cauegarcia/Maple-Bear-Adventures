@@ -1,5 +1,18 @@
 "use strict";
 
+//loading page
+var loading = function loading() {
+  var loadingDiv = document.createElement("div");
+  var container = document.querySelector(".container");
+  loadingDiv.classList.add("loading");
+  loadingDiv.innerHTML = "<div class=\"loading-div\"></div>";
+  container.appendChild(loadingDiv);
+  setTimeout(function () {
+    loadingDiv.classList.remove("loading");
+  }, 2000);
+};
+window.addEventListener("DOMContentLoaded", loading);
+
 // fade effect initializer
 
 var setFade = function () {
@@ -156,7 +169,6 @@ divQuestions.forEach(function (div) {
         div.querySelector("span").innerHTML = "<i class=\"fas fa-plus\"></i>";
       }
     });
-    console.log(e.target.querySelector(".faq-answer"));
     if (answer.style.height === "0px" || answer.style.height === "") {
       answer.style.height = "20vh";
       icon.innerHTML = "<i class=\"fas fa-minus\"></i>";
@@ -228,7 +240,6 @@ var setBarsMenu = function () {
   var showMenu = document.querySelector(".show-menu");
   var links = document.querySelectorAll(".menu-link-header");
   menuBar.addEventListener("click", function () {
-    console.log(showMenu.style);
     if (showMenu.style.opacity === "0" || showMenu.style.opacity == "") {
       showMenu.style.opacity = "1";
       showMenu.style.height = "35vh";

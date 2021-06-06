@@ -275,6 +275,54 @@ li {
   overflow-x: hidden;
 }
 
+/* Loading */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: $color-black;
+  display: grid;
+  place-items: center;
+  .loading-div {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background: url("../images/maplePNG.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: "";
+      width: 110%;
+      height: 110%;
+      position: absolute;
+      top: -2;
+      left: -2;
+      background: $color-black;
+      animation: loading 1.5s ease forwards;
+      animation-timing-function: cubic-bezier(0.15, 0.98, 0.99, 0.19);
+      @keyframes loading {
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+
+  /*  span {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+  } */
+}
 /*Header*/
 .header {
   position: fixed;
