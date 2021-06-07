@@ -1,14 +1,12 @@
 "use strict";
 
 //loading page
+
 var loading = function loading() {
-  var loadingDiv = document.createElement("div");
-  var container = document.querySelector(".container");
-  loadingDiv.classList.add("loading");
-  loadingDiv.innerHTML = "<div class=\"loading-div\"></div>";
-  container.appendChild(loadingDiv);
+  var loadingContainer = document.querySelector(".loading");
+  loadingContainer.innerHTML = "<div class=\"loading-div\"></div>";
   setTimeout(function () {
-    loadingDiv.classList.remove("loading");
+    loadingContainer.style.display = "none";
   }, 2000);
 };
 window.addEventListener("DOMContentLoaded", loading);

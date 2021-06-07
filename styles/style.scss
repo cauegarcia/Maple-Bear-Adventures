@@ -297,8 +297,8 @@ li {
     overflow: hidden;
     &::after {
       content: "";
-      width: 110%;
-      height: 110%;
+      width: 10vw;
+      height: 10vw;
       position: absolute;
       top: -2;
       left: -2;
@@ -510,7 +510,7 @@ section {
 /*-----Hero-------*/
 .hero {
   height: 100vh;
-  background: url("../images/hero-bg.png"), rgba(0, 0, 0, 0.2);
+  background: url("../images/hero-bg.jpg"), rgba(0, 0, 0, 0.2);
   @include bgBasics;
   i {
     font-size: 2rem;
